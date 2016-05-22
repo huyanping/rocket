@@ -8,11 +8,13 @@
   ],
   "version": "0.1.0",
   "require": {
-    "php": ">=5.3.4"
+    "php": ">=5.5.9",
+    "symfony/process": "v3.0.6",
+    "league/url": "3.3.5"
   },
   "autoload": {
     "psr-4": {
-      "jenner\\rocket\\": "src/"
+      "Jenner\\Rocket\\": "src/"
     }
   }
 }

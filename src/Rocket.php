@@ -6,7 +6,7 @@
  * Time: 15:00
  */
 
-namespace jenner\rocket;
+namespace Jenner\Rocket;
 
 
 class Rocket
