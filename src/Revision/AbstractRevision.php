@@ -185,7 +185,8 @@ abstract class AbstractRevision
     protected function runCommand(ProcessBuilder $builder)
     {
         $process = $builder->getProcess();
-        $process->run();
+        $process->start();
+        $process->stop(10, SIGINT);
         if ($process->isSuccessful()) {
             return $process->getOutput();
         } else {
