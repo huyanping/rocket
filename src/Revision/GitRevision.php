@@ -27,6 +27,7 @@ class GitRevision extends AbstractRevision
             ->add('clone')
             ->add($this->buildUrl())
             ->add($this->path);
+        echo $builder->getProcess()->getCommandLine() . PHP_EOL;
 
         return $this->runCommand($builder);
     }
