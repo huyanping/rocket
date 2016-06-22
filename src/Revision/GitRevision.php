@@ -9,7 +9,7 @@
 namespace Jenner\Rocket\Revision;
 
 
-use League\Url\Url;
+use League\Uri\Schemes\Http;
 use Symfony\Component\Process\ProcessBuilder;
 
 class GitRevision extends AbstractRevision
@@ -140,12 +140,12 @@ class GitRevision extends AbstractRevision
 
     protected function buildUrl()
     {
-        $url = Url::createFromUrl($this->url);
+        $url = Http::createFromString($this->url);
         if (!empty($this->user_name) &&
             !empty($this->password) &&
-            strpos($url->getScheme()->__toString(), "http") === 0
+            strpos($url->getScheme(), "http") === 0
         ) {
-            $url->setUser($this->url)->setPassword($this->password);
+            $url->withUserInfo($this->user_name, $this->password);
         }
         return $url->__toString();
     }
