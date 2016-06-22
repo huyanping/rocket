@@ -19,6 +19,6 @@ class GitRevisionTest extends \PHPUnit_Framework_TestCase
         $git->setPath("/tmp/rocket");
         $git->setUserName("huyanpingz@126.com");
         $git->setPassword("987654321abc");
-        $git->checkOut("master");
+        echo $git->checkOut("master");
     }
 }
